@@ -18,14 +18,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   config.berkshelf.enabled = true
   config.vm.provision :chef_solo do |chef|
-  #  chef.cookbooks_path = "../my-recipes/cookbooks"
     chef.roles_path = "roles"
     chef.data_bags_path = "data_bags"
 
     chef.add_recipe "git"
-  #  chef.add_role "web"
 
-  #  # You may also specify custom JSON attributes:
-  #  chef.json = { :mysql_password => "foo" }
+    chef.add_role "base"
+    chef.json = {
+      authorization: {
+        sudo: {
+          users: ["vagrant"],
+          passwordless: true
+        }
+      }
+    }
   end
 end

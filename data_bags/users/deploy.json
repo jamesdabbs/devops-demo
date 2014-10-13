@@ -1,0 +1,11 @@
+{
+  "id": "deploy",
+  "password": "$1$Intccez6$anrN0n8.rRdA00NiHB5Uh0",
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOFEapzJ/7dS1TMOE+EJygxqOm9HKIvGCC9vhb36h9mN5rzRT7rV877OJ4TDyChXUEh8F5O5unKdRWcuyxRkXKdUtUjKIibw2ajM7v5UCKpRFa5wncxtelN9GZVZj/WzSLUNfm58t8oITu6+/tDRoKSRGHUV7sTnHzhDJLTuRDoNp8qZJzTwLwyflyg9z0MOjHN1u0a+fLyV3MtCuw5smcqP3wErgDtqsD4WIwi02aSYLpHNtGfjfQLC4YVGwyX9j9s/mqW3i3xWnd6UVefhJpnycfL+/F1347EtUElFN9dRqrYjRl2z4lfuUOUdexVIfC6yedGduPhJBw30vkqYOD james@Jake.local"
+    ],
+  "groups": [ "sysadmin" ],
+  "uid": 2001,
+  "shell": "\/bin\/bash",
+  "comment": ""
+}
