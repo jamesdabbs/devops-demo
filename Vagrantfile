@@ -1,11 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-$script = <<SCRIPT
-apt-get -yq install git
-gem install bundler
-SCRIPT
-
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -17,20 +12,20 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.network :private_network, ip: "192.168.33.10"
 
-  config.vm.provision :shell, inline: $script
-
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
-  #config.vm.provision :chef_solo do |chef|
+  config.berkshelf.enabled = true
+  config.vm.provision :chef_solo do |chef|
   #  chef.cookbooks_path = "../my-recipes/cookbooks"
-  #  chef.roles_path = "../my-recipes/roles"
-  #  chef.data_bags_path = "../my-recipes/data_bags"
-  #  chef.add_recipe "mysql"
+    chef.roles_path = "roles"
+    chef.data_bags_path = "data_bags"
+
+    chef.add_recipe "git"
   #  chef.add_role "web"
 
   #  # You may also specify custom JSON attributes:
   #  chef.json = { :mysql_password => "foo" }
-  #end
+  end
 end
