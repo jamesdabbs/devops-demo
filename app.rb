@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-  'Hello devops'
+  'Hello again, devops'
 end
